@@ -205,3 +205,67 @@ I use SSH keys for secure GitHub authentication.
 - Job + freelancing income
 
 ==================================================
+
+==================================================
+
+## DAY 6: DOCKER (INSTALLATION & VERIFICATION)
+
+### What is Docker?
+Docker is a containerization platform used to run applications in isolated environments called containers.
+
+### Why Docker is used?
+- Consistent environment
+- Fast deployment
+- Lightweight compared to virtual machines
+- Core DevOps & Cloud skill
+
+--------------------------------------------------
+
+### Docker Installation (RHEL / CentOS / Oracle Linux)
+
+Commands used:
+yum install -y yum-utils
+yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+yum install -y docker-ce docker-ce-cli containerd.io
+
+--------------------------------------------------
+
+### Docker Service Management
+
+Commands:
+systemctl start docker
+systemctl enable docker
+systemctl status docker
+
+Result:
+Docker service is active and running.
+
+--------------------------------------------------
+
+### Docker Verification
+
+Command:
+docker --version
+
+Result:
+Docker version displayed successfully, confirming Docker is installed correctly.
+
+--------------------------------------------------
+
+### Learning Outcome:
+- Docker installed successfully
+- Docker service running
+- System ready to run containers
+
+--------------------------------------------------
+
+### Interview Questions:
+
+Q: How do you check if Docker is running?
+A: Using `systemctl status docker` and `docker --version`.
+
+Q: What is Docker?
+A: Docker is a containerization tool that packages applications with dependencies.
+
+==================================================
+
