@@ -269,3 +269,18 @@ A: Docker is a containerization tool that packages applications with dependencie
 
 ==================================================
 
+--------------------------------------------------
+
+### Docker First Container Test
+
+Command:
+docker run hello-world
+
+Result:
+"Hello from Docker!" message displayed.
+
+Learning:
+- Docker pulled image from Docker Hub
+- Container executed successfully
+- Docker setup verified
+
