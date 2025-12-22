@@ -284,3 +284,24 @@ Learning:
 - Container executed successfully
 - Docker setup verified
 
+--------------------------------------------------
+
+### Docker Container Name Conflict & Lifecycle
+
+Issue:
+Container name conflict occurred because a stopped container with same name already existed.
+
+Commands Used:
+docker ps -a
+docker rm mynginx
+docker run -d -p 8080:80 --name mynginx nginx
+
+Learning:
+- Docker does not allow duplicate container names
+- Stopped containers must be removed to reuse names
+- Container lifecycle: create → run → stop → remove
+
+Interview Q:
+Q: Why does Docker say container name already in use?
+A: Because a container with the same name exists (running or stopped).
+
