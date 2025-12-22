@@ -305,3 +305,77 @@ Interview Q:
 Q: Why does Docker say container name already in use?
 A: Because a container with the same name exists (running or stopped).
 
+
+--------------------------------------------------
+
+### Docker Container Name Conflict
+
+Issue:
+Container name already in use error.
+
+Reason:
+A stopped container with the same name already existed.
+
+Commands Used:
+docker ps -a
+docker rm mynginx
+
+Learning:
+- docker ps shows only running containers
+- docker ps -a shows all containers
+- Container names must be unique
+
+
+--------------------------------------------------
+
+### Docker in VirtualBox (Accessing Container)
+
+Scenario:
+Docker running inside Linux VM on VirtualBox.
+
+Solution:
+- Find VM IP using `ip a`
+- Access container using:
+  http://<VM-IP>:<Port>
+
+Example:
+http://192.168.56.101:8080
+
+Learning:
+- localhost inside VM is different from host machine
+- Port mapping works across VM using VM IP
+
+
+--------------------------------------------------
+
+### Docker Troubleshooting (Real Scenarios)
+
+Issue 1: Container name conflict
+Error:
+Conflict. The container name "/mynginx" is already in use.
+
+Fix:
+docker ps -a
+docker rm mynginx
+
+Learning:
+- docker ps shows only running containers
+- docker ps -a shows all containers
+- Container names must be unique
+
+--------------------------------------------------
+
+Issue 2: Accessing container in VirtualBox VM
+
+Problem:
+localhost:8080 not accessible from host machine
+
+Fix:
+- Found VM IP using `ip a`
+- Accessed service via:
+  http://<VM-IP>:8080
+
+Learning:
+- localhost inside VM is different from host
+- Use VM IP + mapped port to access container
+
