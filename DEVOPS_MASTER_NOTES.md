@@ -435,3 +435,46 @@ Learning:
 - Docker can only run images that exist locally or on a registry
 - Image name and tag must exist before running
 
+
+==================================================
+
+## DAY 7 (ADVANCED): Dockerfile Best Practices
+
+### CMD vs ENTRYPOINT
+
+CMD:
+- Provides default command
+- Can be overridden at runtime
+
+ENTRYPOINT:
+- Defines fixed executable
+- Used when container must always run the same command
+
+Interview Line:
+Use ENTRYPOINT for fixed behavior and CMD for default parameters.
+
+--------------------------------------------------
+
+### Improved Dockerfile (Production Ready)
+
+Dockerfile:
+FROM nginx:latest
+COPY index.html /usr/share/nginx/html/index.html
+CMD ["nginx", "-g", "daemon off;"]
+
+Why daemon off?
+- Keeps nginx in foreground
+- Prevents container from exiting
+
+--------------------------------------------------
+
+### Versioned Image Build
+
+Commands:
+docker build -t arjun-nginx:v2 .
+docker run -d -p 8082:80 --name arjunweb arjun-nginx:v2
+
+Learning:
+- Always version Docker images
+- Never overwrite latest blindly
+
