@@ -379,3 +379,59 @@ Learning:
 - localhost inside VM is different from host
 - Use VM IP + mapped port to access container
 
+
+--------------------------------------------------
+
+### Docker Image Not Found Error (Local Image)
+
+Issue:
+Docker tried to pull local image from Docker Hub.
+
+Root Cause:
+Image was not built or not available locally.
+
+Fix:
+- Navigate to Dockerfile directory
+- Run: docker build -t arjun-nginx .
+- Verify with: docker images
+
+Learning:
+Docker only runs images that exist locally or on registry.
+
+
+--------------------------------------------------
+
+### Docker Image Not Found Error (Local Image Issue)
+
+Error:
+Unable to find image 'arjun-nginx:latest' locally  
+pull access denied for arjun-nginx
+
+Root Cause:
+Docker image was not available locally, so Docker tried to pull it from Docker Hub.
+
+Understanding:
+- Local images must be built before running
+- If image is missing locally, Docker checks Docker Hub
+- Custom images do not exist on Docker Hub by default
+
+Fix Steps:
+1. Navigate to Dockerfile directory:
+   cd /root/linux_practice/dockerfile-demo
+
+2. Build image again:
+   docker build -t arjun-nginx .
+
+3. Verify image exists:
+   docker images
+
+4. Run container:
+   docker run -d -p 8081:80 --name arjunweb arjun-nginx
+
+Result:
+Custom Docker image ran successfully and web page was accessible.
+
+Learning:
+- Docker can only run images that exist locally or on a registry
+- Image name and tag must exist before running
+
